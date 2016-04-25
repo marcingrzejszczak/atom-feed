@@ -14,9 +14,5 @@ io.codearte.accurest.dsl.GroovyDsl.make {
 		sentTo('output')
 		// the body of the output message
 		body('''{"username":"dsyer","repository":"spring-cloud-samples"}''')
-		// the headers of the output message
-		headers {
-			header('version', 'v1')
-		}
 	}
 }
