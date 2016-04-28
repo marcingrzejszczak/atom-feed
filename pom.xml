@@ -21,7 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<accurest-plugin.version>0.5.10</accurest-plugin.version>
+		<accurest-plugin.version>0.6.0</accurest-plugin.version>
 	</properties>
 
 	<modules>
