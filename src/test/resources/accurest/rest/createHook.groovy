@@ -1,4 +1,4 @@
-package rest
+package accurest.rest
 
 io.codearte.accurest.dsl.GroovyDsl.make {
 	request {

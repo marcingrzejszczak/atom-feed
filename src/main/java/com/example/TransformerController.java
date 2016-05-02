@@ -1,8 +1,8 @@
 package com.example;
 
-import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.PathNotFoundException;
-import com.toomuchcoding.jsonassert.JsonPath;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.messaging.MessageHeaders;
@@ -12,14 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.PathNotFoundException;
+import com.toomuchcoding.jsonassert.JsonPath;
 
 /**
  * @author Marcin Grzejszczak
  */
 @RestController
-public class TransformerConfiguration {
+public class TransformerController {
 
 	@Autowired
 	Source source;

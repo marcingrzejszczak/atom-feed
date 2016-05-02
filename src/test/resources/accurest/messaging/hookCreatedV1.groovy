@@ -1,3 +1,5 @@
+package accurest.messaging
+
 io.codearte.accurest.dsl.GroovyDsl.make {
 	// Human readable description
 	description 'Some description'

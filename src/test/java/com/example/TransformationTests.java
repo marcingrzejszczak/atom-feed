@@ -1,7 +1,5 @@
 package com.example;
 
-import static org.assertj.core.api.BDDAssertions.then;
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -13,9 +11,11 @@ import org.springframework.core.io.Resource;
 import org.springframework.integration.channel.QueueChannel;
 import org.springframework.util.FileCopyUtils;
 
+import static org.assertj.core.api.BDDAssertions.then;
+
 public class TransformationTests {
 
-	private TransformerConfiguration transformer = new TransformerConfiguration();
+	private TransformerController transformer = new TransformerController();
 	private Source source = () -> new QueueChannel();
 
 	@Before
