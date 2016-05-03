@@ -31,6 +31,7 @@ import io.codearte.accurest.messaging.AccurestMessaging;
 import static org.springframework.restdocs.cli.CliDocumentation.curlRequest;
 import static org.springframework.restdocs.http.HttpDocumentation.httpRequest;
 import static org.springframework.restdocs.http.HttpDocumentation.httpResponse;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
 
 /**
@@ -62,7 +63,9 @@ public class BaseClass {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
 				.apply(documentationConfiguration(this.restDocumentation).snippets()
 				.withDefaults(curlRequest(), httpRequest(), httpResponse(),
-						new AccurestSnippet(ACCUREST_PATH))).build();
+						new AccurestSnippet(ACCUREST_PATH)))
+				.alwaysDo(document("{method-name}/{step}/"))
+				.build();
 		RestAssuredMockMvc.mockMvc(this.mockMvc);
 		messaging.receiveMessage("output", 100, TimeUnit.MILLISECONDS);
 	}
